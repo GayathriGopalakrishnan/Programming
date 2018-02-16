@@ -1,0 +1,47 @@
+/* Given a string, S, of length N that is indexed from 0 to N-1, print its even-indexed and odd-indexed characters as 2
+space-separated strings on a single line (see the Sample below for more detail).
+Note: 0 is considered to be an even index.
+
+Sample Input
+2
+Hacker
+Rank
+
+Sample Output
+Hce akr
+Rn ak  */
+
+//SOLUTION
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    //public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        public static void main(String[] args) {
+
+    Scanner scan = new Scanner(System.in);
+    int i = scan.nextInt();
+    scan.nextLine();      
+    String[] lines = new String[i]; 
+
+    for(int j = 0; j<i; j++){  
+
+        lines[j] = scan.nextLine();
+        char[] characters = lines[j].toCharArray();
+
+        for (int k=0; k<lines[j].length(); k+=2){
+            System.out.print(characters[k]);
+        }            
+        System.out.print(" "); 
+
+        for (int k=1; k<lines[j].length(); k+=2){
+            System.out.print(characters[k]);
+        }            
+        System.out.println();
+    }
+    scan.close();
+}    
+}
